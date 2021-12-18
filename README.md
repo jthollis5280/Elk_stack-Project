@@ -38,7 +38,7 @@ The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address                         |     Operating System |
-|----------|----------|-----------------------------------------------------------
+|----------|----------|------------------------------------|----------------------|
 | Jump Box | Gateway  | 10.0.0.4 / 20.121.26.104           |     Linux            |
 | Web1     |   Ubuntu | 10.0.0.5 / 23.96.60.43             |     Linux            |
 | Web2     |   Ubuntu | 10.0.0.6 / 23.96.60.43             |     Linux            |
