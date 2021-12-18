@@ -8,7 +8,7 @@ The files in this repository were used to configure the network depicted below.
 https://drive.google.com/file/d/1Q_grVgkRYz976n7f5iQpL8mQ_w_Cu43w/view?usp=sharing
 
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the **Yml and config** files may be used to install only certain pieces of it, such as Filebeat.
 
   - _TODO: Enter the playbook file._
 
@@ -25,32 +25,36 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly **available**, in addition to restricting **traffic** to the network.
+ 
+- What aspect of security do load balancers protect? Load balancers help mitigate Dos attacks, which is a common problem with websites. The load balance recieves any traffic that comes in and distributes it across multiple servers. In our case Web 1 and Web 2. Configurations of health probes helps ensure the functionality and availability to keep sites stable.
+- What is the advantage of a jump box? The advantage of a JBox is that we can configure it to restrict IP addresses and allow our Azure VMs to not be directly exposed to the internet through a public IP. It acts as a Front door security guard to the VMs and only lets in IP address that we configure within it's rules set. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **network** and **system logs**.
+-What does Filebeat watch for? Filebeat collects log events.
+-What does Metricbeat record? Metricbeat takes statistics and metric.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name     | Function | IP Address                              Operating System |
+|----------|----------|-----------------------------------------------------------
+| Jump Box | Gateway  | 10.0.0.4 / 20.121.26.104                Linux            |
+| Web1     |   Ubuntu | 10.0.0.5 / 23.96.60.43                  Linux            |
+| Web2     |   Ubuntu | 10.0.0.6 / 23.96.60.43                  Linux            |
+| ELK_VM   |   Ubuntu | 10.1.0.4 / 52.159.72.172                Linux            |
+
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the **JBOX** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - _TODO: Add whitelisted IP addresses_
 
 Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Which machine did you allow to access your ELK VM? 
+What was its IP address?_
 
 A summary of the access policies in place can be found in the table below.
 
