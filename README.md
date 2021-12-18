@@ -8,7 +8,7 @@ The files in this repository were used to configure the network depicted below.
 https://drive.google.com/file/d/1Q_grVgkRYz976n7f5iQpL8mQ_w_Cu43w/view?usp=sharing
 
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the **Yml and config** files may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the **Yaml and config** files may be used to install only certain pieces of it, such as Filebeat.
 
   - _TODO: Enter the playbook file._
 
@@ -37,12 +37,12 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address                              Operating System |
+| Name     | Function | IP Address                         |     Operating System |
 |----------|----------|-----------------------------------------------------------
-| Jump Box | Gateway  | 10.0.0.4 / 20.121.26.104                Linux            |
-| Web1     |   Ubuntu | 10.0.0.5 / 23.96.60.43                  Linux            |
-| Web2     |   Ubuntu | 10.0.0.6 / 23.96.60.43                  Linux            |
-| ELK_VM   |   Ubuntu | 10.1.0.4 / 52.159.72.172                Linux            |
+| Jump Box | Gateway  | 10.0.0.4 / 20.121.26.104           |     Linux            |
+| Web1     |   Ubuntu | 10.0.0.5 / 23.96.60.43             |     Linux            |
+| Web2     |   Ubuntu | 10.0.0.6 / 23.96.60.43             |     Linux            |
+| ELK_VM   |   Ubuntu | 10.1.0.4 / 52.159.72.172           |     Linux            |
 
 
 ### Access Policies
@@ -50,24 +50,27 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the **JBOX** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+-SSH azadmin@20.121.26.104
 
-Machines within the network can only be accessed by _____.
-Which machine did you allow to access your ELK VM? 
-What was its IP address?_
+Machines within the network can only be accessed by **SSH**.
+Which machine did you allow to access your ELK VM? Jump box SSH azadmin@10.1.0.4 (assuming public key is correct on Jbox) through port 22
+What was its IP address? private is 10.1.0.4; public 52.159.72.172:5601
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name     | Publicly Accessible | Allowed IP Addresses         |
+|----------|---------------------|------------------------------|
+| Jump Box |  Yes                | ssh azadmin@20.121.26.104    |
+| Web 1    |  No                 | ssh azadmin@10.0.0.5         |
+| Web 2    |  No                 | ssh azadmin@10.0.0.6         |
+| ELK      |  No                 | ssh azadmin@10.1.0.4         |
+| ELK      |  No                 | Http 52.159.72.172:5601      |
+
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+What is the main advantage of automating configuration with Ansible? The main advantage of automating through ansible is that you can do serveral machines with one YAML playbook
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
