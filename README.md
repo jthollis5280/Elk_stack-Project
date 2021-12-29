@@ -167,13 +167,9 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the **YAML** file to **Ansible folder**.
+- Update the **Config file** to include the **correct ports and azadmin(USER)**.
+- Run the playbook, and navigate to **Kibana ** to check that the installation worked as expected.
+- ![image](https://user-images.githubusercontent.com/87458325/147626905-f845f2e9-5679-494b-b19e-ba81963bbc67.png)
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
