@@ -10,7 +10,6 @@ https://drive.google.com/file/d/1Q_grVgkRYz976n7f5iQpL8mQ_w_Cu43w/view?usp=shari
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the **Yaml and config** files may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
 
 This document contains the following details:
 - Description of the Topologu
